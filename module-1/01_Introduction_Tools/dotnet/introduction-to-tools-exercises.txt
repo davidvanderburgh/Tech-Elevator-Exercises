@@ -61,7 +61,6 @@ drwxr-xr-x 1 davidv 197121   0 Jan 14 15:58 Helloworld/
 
 Helloworld.sln
 
-
 ----
 7.  What are the names of the directories, including any dot-directories, displayed in
     the directory listing in Exercise 4?
@@ -120,13 +119,25 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helloworld", "Helloworld\He
 Did you remember to save "introduction-to-tools-exercise.txt"?
 
 $ git status
-<type or copy-paste the result here>
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   ../introduction-to-tools-exercises.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
 
 $ git add -A
-<type or copy-paste the result here>
+
 
 $ git commit -m "Good stopping point"
-<type or copy-paste the result here>
+[master 199fb60] Good stopping point
+ 1 file changed, 19 insertions(+), 8 deletions(-)
+
 
 Note, you do not need to push this commit up to BitBucket at this time. The
 typical Git workflow is to make many small commits to your local repo while
@@ -143,7 +154,8 @@ along, and then at the end.
 
 $ cd Helloworld
 $ <enter command to display present working directory>
-<type or copy-paste your present working directory here>
+davidv@DESKTOP-ICT08NO MINGW64 ~/davidvanderburgh-c-sharp-exercises/module-1/01_Introduction_Tools/dotnet/csharp-helloworld/HelloWorld (master)
+
 
 
 ----
@@ -151,7 +163,7 @@ $ <enter command to display present working directory>
     path?
 ----
 
-<type your answer here>
+Relative
 
 
 ----
@@ -159,8 +171,15 @@ $ <enter command to display present working directory>
     your present working directory.
 ----
 
-$ <enter command to list all files and directories including dot-files and dot-directories>
-<type or copy-paste the result here>
+$ ls -la
+total 10
+drwxr-xr-x 1 davidv 197121    0 Jan 14 15:58 ./
+drwxr-xr-x 1 davidv 197121    0 Jan 14 15:58 ../
+-rw-r--r-- 1 davidv 197121  186 Jan 14 15:58 App.config
+-rw-r--r-- 1 davidv 197121 2712 Jan 14 15:58 Helloworld.csproj
+-rw-r--r-- 1 davidv 197121  266 Jan 14 15:58 Program.cs
+drwxr-xr-x 1 davidv 197121    0 Jan 14 15:58 Properties/
+
 
 
 ----
@@ -174,8 +193,16 @@ $ cp Program.cs Helloworld.cs.backup
 The "cp" parameters are the name of the source file followed by the name of the
 destination file.
 
-$ <enter command to list all files and directories in order to confirm the creation of the backup file>
-<type or copy-paste the result here>
+$ ls -al
+total 11
+drwxr-xr-x 1 davidv 197121    0 Jan 14 16:35 ./
+drwxr-xr-x 1 davidv 197121    0 Jan 14 15:58 ../
+-rw-r--r-- 1 davidv 197121  186 Jan 14 15:58 App.config
+-rw-r--r-- 1 davidv 197121  266 Jan 14 16:35 Helloworld.cs.backup
+-rw-r--r-- 1 davidv 197121 2712 Jan 14 15:58 Helloworld.csproj
+-rw-r--r-- 1 davidv 197121  266 Jan 14 15:58 Program.cs
+drwxr-xr-x 1 davidv 197121    0 Jan 14 15:58 Properties/
+
 
 
 ----
@@ -188,8 +215,16 @@ $ mv Program.cs.backup Program.cs.copy
 The "mv" parameters are the existing name of the file followed by the new name
 of the file.
 
-$ <enter command to list all files and directories in order to confirm the renaming of the file>
-<type or copy-paste the result here>
+$ ls -la
+total 11
+drwxr-xr-x 1 davidv 197121    0 Jan 14 16:36 ./
+drwxr-xr-x 1 davidv 197121    0 Jan 14 15:58 ../
+-rw-r--r-- 1 davidv 197121  186 Jan 14 15:58 App.config
+-rw-r--r-- 1 davidv 197121  266 Jan 14 16:35 Helloworld.cs.copy
+-rw-r--r-- 1 davidv 197121 2712 Jan 14 15:58 Helloworld.csproj
+-rw-r--r-- 1 davidv 197121  266 Jan 14 15:58 Program.cs
+drwxr-xr-x 1 davidv 197121    0 Jan 14 15:58 Properties/
+
 
 
 ----
