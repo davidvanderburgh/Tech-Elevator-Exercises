@@ -313,8 +313,8 @@ command line when that seems natural.
 
 Regardless of the option you chose, check your new location.
 
-$ <enter command to display present working directory>
-<type or copy-paste your present working directory here>
+$ pwd
+/c/Users/davidv/davidvanderburgh-c-sharp-exercises/module-1/01_Introduction_Tools/dotnet/csharp-helloworld
 
 
 ----
@@ -323,9 +323,10 @@ $ <enter command to display present working directory>
 ----
 
 $ mkdir docs
-$ <enter the command to change directory to "docs" using a relative path>
-$ <enter command to display present working directory>
-<type or copy-paste your present working directory here>
+$ cd docs
+$ pwd
+/c/Users/davidv/davidvanderburgh-c-sharp-exercises/module-1/01_Introduction_Tools/dotnet/csharp-helloworld/docs
+
 
 ----
 19. Create a new file name "readme.txt" using VS Code, and add the text
@@ -342,10 +343,10 @@ Don't forget to save the file in VS Code!
     work so it can be reviewed by an instructor.
 ----
 
-$ <enter the Git command to display status>
+$ git status
 
-$ <enter the Git command to "stage" all changes>
+$ git add -A
 
-$ <enter the Git command to save all "staged" changes>
+$ git commit -m "uploaded some new changes"
 
-$ <enter the Git command to save local repository to BitBucket>
+$ git push origin master
