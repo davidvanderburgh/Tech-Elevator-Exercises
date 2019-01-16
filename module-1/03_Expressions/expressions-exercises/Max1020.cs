@@ -17,7 +17,33 @@ namespace Exercises
       */
         public int Max1020(int a, int b)
         {
-            return 0;
+            //both in range, find the largest
+            if ((a >= 10 && a <= 20) && (b >= 10 && b <= 20))
+            {
+                if (a >= b)
+                {
+                    return a;
+                }
+                else
+                {
+                    return b;
+                }
+            }
+            //only a in range
+            else if ((a >= 10 && a <= 20))
+            {
+                return a;
+            }
+            //only b in range
+            else if ((b >= 10 && b <= 20))
+            {
+                return b;
+            }
+            //neither in range
+            else
+            {
+                return 0;
+            }
         }
 
     }

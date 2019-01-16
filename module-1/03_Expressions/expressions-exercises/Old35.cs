@@ -17,8 +17,18 @@ namespace Exercises
          */
         public bool Old35(int n)
         {
-            return false;
+            if ((n % 3 == 0) && (n % 5 != 0))
+            {
+                return true;
+            }
+            else if ((n % 5 == 0) && (n % 3 != 0))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-
     }
 }
