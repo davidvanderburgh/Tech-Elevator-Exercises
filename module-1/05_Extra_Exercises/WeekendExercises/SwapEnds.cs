@@ -9,7 +9,8 @@ namespace Exercises
     public partial class Exercises
     {
         /*
-         Given an array of ints, swap the first and last elements in the array. Return the modified array. The array 
+         Given an array of ints, swap the first and last elements in the array. 
+         Return the modified array. The array 
          length will be at least 1.
          swapEnds([1, 2, 3, 4]) → [4, 2, 3, 1]
          swapEnds([1, 2, 3]) → [3, 2, 1]
@@ -17,7 +18,10 @@ namespace Exercises
          */
         public int[] SwapEnds(int[] nums)
         {
-            return new int[] { };
+            int[] modifiedNumbers = (int[])nums.Clone();
+            modifiedNumbers[0] = nums[nums.Length - 1];
+            modifiedNumbers[modifiedNumbers.Length - 1] = nums[0];
+            return modifiedNumbers;
         }
 
 

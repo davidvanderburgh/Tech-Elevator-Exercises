@@ -18,7 +18,21 @@ namespace Exercises
          */
         public bool No14(int[] nums)
         {
-            return false;
+            bool foundAOne = false;
+            bool foundAFour = false;
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] == 1)
+                {
+                    foundAOne = true;
+                }
+                else if (nums[i] == 4)
+                {
+                    foundAFour = true;
+                }
+            }
+            return (!foundAOne || !foundAFour);
         }
     }
 }

@@ -16,7 +16,26 @@ namespace Exercises
          */
         public bool Array123(int[] nums)
         {
-            return false;
+            bool hasOne = false;
+            bool hasTwo = false;
+            bool hasThree = false;
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] == 1)
+                {
+                    hasOne = true;
+                }
+                else if (nums[i] == 2)
+                {
+                    hasTwo = true;
+                }
+                else if (nums[i] == 3)
+                {
+                    hasThree = true;
+                }
+            }
+            return (hasOne && hasTwo && hasThree);
         }
     }
 }
