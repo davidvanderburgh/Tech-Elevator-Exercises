@@ -18,10 +18,13 @@ namespace Exercises
          */
         public int[] SwapEnds(int[] nums)
         {
-            int[] modifiedNumbers = (int[])nums.Clone();
-            modifiedNumbers[0] = nums[nums.Length - 1];
-            modifiedNumbers[modifiedNumbers.Length - 1] = nums[0];
-            return modifiedNumbers;
+            int firstNumber = nums[0];
+            int lastNumber = nums[nums.Length - 1];
+
+            nums[0] = lastNumber;
+            nums[nums.Length - 1] = firstNumber;
+
+            return nums;
         }
 
 
