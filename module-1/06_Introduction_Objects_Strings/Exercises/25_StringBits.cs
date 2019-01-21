@@ -9,14 +9,30 @@ namespace Exercises
     public partial class StringExercises
     {
         /*
-         Given a string, return a new string made of every other char starting with the first, so "Hello" yields "Hlo".
+         Given a string, return a new string made of every other char starting with the first, 
+         so "Hello" yields "Hlo".
          StringBits("Hello") → "Hlo"
          StringBits("Hi") → "H"
          StringBits("Heeololeo") → "Hello"
          */
         public string StringBits(string str)
         {
-            return null;
+            bool useCurrentCharacter = true;
+            string result = "";
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (useCurrentCharacter)
+                {
+                    result += str[i].ToString();
+                    useCurrentCharacter = false;
+                }
+                else
+                {
+                    useCurrentCharacter = true;
+                }
+            }
+            return result;
         }
     }
 }
