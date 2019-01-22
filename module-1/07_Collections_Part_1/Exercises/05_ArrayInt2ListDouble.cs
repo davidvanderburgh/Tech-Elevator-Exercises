@@ -16,7 +16,14 @@ namespace Exercises
          */
         public List<double> ArrayInt2ListDouble(int[] intArray)
         {
-            return null;
+            List<double> halvedInts = new List<double>();
+
+            foreach (int integer in intArray)
+            {
+                halvedInts.Add((double)integer / 2.0);
+            }
+
+            return halvedInts;
         }
 
     }
