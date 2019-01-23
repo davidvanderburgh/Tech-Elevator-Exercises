@@ -22,6 +22,5 @@ namespace Exercises
             reversedList.Reverse();
             return reversedList;
         }
-
     }
 }
