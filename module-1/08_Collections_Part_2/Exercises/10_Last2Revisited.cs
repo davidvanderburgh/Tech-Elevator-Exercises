@@ -25,7 +25,35 @@ namespace Exercises
          */
         public Dictionary<string, int> Last2Revisited(string[] words)
         {
-            return null;
+            // read each word in words
+            //  call the last two characters lastTwo
+            //  make a counter for the numberOfTimesLastTwoFound
+            //  loop through each character in the word (excluding the last two)
+            //      if the current and next character match the lastTwo
+            //          increment the counter
+            //  add the word and counter to a dictionary
+            // return the dictionary
+
+            Dictionary<string, int> last2FoundCount = new Dictionary<string, int>();
+
+            foreach (string word in words)
+            {
+                int lastTwoFoundCount = 0;
+                if (word.Length > 2)
+                {
+                    string lastTwo = word.Substring(word.Length - 2);
+
+                    for (int i = 0; i < word.Length - 2; i++)
+                    {
+                        if (word.Substring(i, 2) == lastTwo)
+                        {
+                            lastTwoFoundCount++;
+                        }
+                    }
+                }
+                last2FoundCount[word] = lastTwoFoundCount;
+            }
+            return last2FoundCount;
         }
     }
 }

@@ -20,7 +20,16 @@ namespace Exercises
          */
         public Dictionary<string, int> RobPeterToPayPaul(Dictionary<string, int> peterPaul)
         {
-            return null;
+            if (peterPaul.ContainsKey("Peter") && 
+                peterPaul.ContainsKey("Paul") &&
+                peterPaul["Peter"] > 0 && 
+                peterPaul["Paul"] < 1000)
+            {
+                peterPaul["Paul"] += peterPaul["Peter"] / 2;
+                peterPaul["Peter"] /= 2;
+            }
+
+            return peterPaul;
         }
     }
 }

@@ -20,13 +20,9 @@ namespace Exercises
             string result = "";
             for (int i = 0; i < str.Length; i++)
             {
-                if (i % 4 == 0)
+                if (i % 4 == 0 || i % 4 == 1)
                 {
                     result += str[i].ToString();
-                }
-                if ((i + 1) % 4 == 1 && (i+1) < str.Length)
-                {
-                    result += str[i + 1].ToString();
                 }
             }
             return result;

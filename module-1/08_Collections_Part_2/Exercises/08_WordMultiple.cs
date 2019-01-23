@@ -19,7 +19,59 @@ namespace Exercises
          */
         public Dictionary<string, bool> WordMultiple(string[] words)
         {
-            return null;
+            // create a dictionary
+            // turn words input into a List
+            // look at every word in wordsList
+            //  if it's the first time we've seen the word, 
+            //      set its value to false
+            //  if the last index of the word at the current index is NOT the same
+            //      set its value to true
+
+
+            Dictionary<string, bool> wordMultiples = new Dictionary<string, bool>();
+
+            List<string> wordsList = new List<string>(words);
+
+            for (int i = 0; i < wordsList.Count; i++)
+            {
+                if (!wordMultiples.ContainsKey(wordsList[i]))
+                {
+                    wordMultiples[wordsList[i]] = false;
+                }
+                if (wordsList.LastIndexOf(wordsList[i]) != i)
+                {
+                    wordMultiples[wordsList[i]] = true;
+                }
+            }
+
+            //Dictionary<string, int> wordCount = new Dictionary<string, int>();
+
+            //foreach (string word in words)
+            //{
+            //    if (!wordCount.ContainsKey(word))
+            //    {
+            //        wordCount[word] = 1;
+            //    }
+            //    else
+            //    {
+            //        wordCount[word]++;
+            //    }
+            //}
+
+            //foreach (KeyValuePair<string, int> entry in wordCount)
+            //{
+            //    if (entry.Value >= 2)
+            //    {
+            //        wordMultiples[entry.Key] = true;
+            //    }
+            //    else
+            //    {
+            //        wordMultiples[entry.Key] = false;
+            //    }
+            //}
+
+
+            return wordMultiples;
         }
     }
 }
