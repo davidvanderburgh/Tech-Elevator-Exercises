@@ -9,7 +9,7 @@ namespace Individual.Exercises.Classes
     public class Elevator
     {
         public int CurrentLevel { get; private set; }
-        public int NumberOfLevels { get; private set; }
+        public int NumberOfLevels { get; }
         public bool DoorIsOpen { get; private set; }
 
         public Elevator(int numberOfLevels)
