@@ -16,6 +16,14 @@ namespace PostageCalculator
                 //Entering a valid integer, or start the loop again
                 if (!int.TryParse(Console.ReadLine(), out int weight))
                 {
+                    //invalid entry
+                    PrintError("Entered weight is not a valid integer.");
+                    continue;
+                }
+                if (weight <= 0)
+                {
+                    //invalid entry
+                    PrintError("Entered weight  must be a positive non-zero integer.");
                     continue;
                 }
 
@@ -26,6 +34,8 @@ namespace PostageCalculator
 
                 if (!(poundsOrOunces == "o" || poundsOrOunces == "p"))
                 {
+                    //invalid entry
+                    PrintError("Entry must be O,o,P, or p.");
                     continue;
                 }
 
@@ -34,15 +44,18 @@ namespace PostageCalculator
                 //Entering a valid integer, or start the loop again
                 if (!int.TryParse(Console.ReadLine(), out int distance))
                 {
+                    //invalid entry
+                    PrintError("Entered distance must be a valid integer.");
                     continue;
                 }
-                if (distance < 0)
+                if (distance <= 0)
                 {
+                    PrintError("Entered distance must be a positive non-zero integer.");
                     continue;
                 }
 
                 //Print the delivery method cost table
-
+                Console.WriteLine();
                 Console.WriteLine("{0,-30}{1,-10}",
                     "Delivery Method",
                     "$ cost");
@@ -78,6 +91,11 @@ namespace PostageCalculator
                 Console.WriteLine();
             }
 
+        }
+
+        public static void PrintError(string error)
+        {
+            Console.WriteLine($"Error: {error}\nStarting from the beginning...\n");
         }
     }
 }

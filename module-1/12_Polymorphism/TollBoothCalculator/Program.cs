@@ -26,7 +26,7 @@ namespace TollBoothCalculator
                  "Vehicle",
                  "Distance Travelled",
                  "Toll $");
-            Console.WriteLine("-----------------------------------------------------------------------");
+            Console.WriteLine("------------------------------------------------");
             foreach (IVehicle vehicle in vehicles)
             {
                 int distanceTravelled = random.Next(10, 240);
