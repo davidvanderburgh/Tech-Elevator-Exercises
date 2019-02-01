@@ -8,5 +8,9 @@ namespace Exercises
 {
     public class KataRomanNumerals
     {
+        public string ConvertToRomanNumeral(int n)
+        {
+            return "";
+        }
     }
 }
