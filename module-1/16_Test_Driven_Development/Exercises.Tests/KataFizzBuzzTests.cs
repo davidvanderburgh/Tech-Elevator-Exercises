@@ -81,6 +81,16 @@ namespace Exercises.Tests
             Assert.AreEqual("", kataFizzBuzz.FizzBuzz(-15));
         }
 
+        [TestMethod]
+        public void FizzBuzz_NumberContainsA3Only_Fizz()
+        {
+            Assert.AreEqual("Fizz", kataFizzBuzz.FizzBuzz(3));
+            Assert.AreEqual("Fizz", kataFizzBuzz.FizzBuzz(13));
+            Assert.AreEqual("Fizz", kataFizzBuzz.FizzBuzz(23));
+            Assert.AreEqual("Fizz", kataFizzBuzz.FizzBuzz(43));
+            Assert.AreEqual("Fizz", kataFizzBuzz.FizzBuzz(53));
+            Assert.AreEqual("Fizz", kataFizzBuzz.FizzBuzz(73));
+        }
 
     }
 }
