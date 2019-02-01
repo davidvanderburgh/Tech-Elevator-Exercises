@@ -73,12 +73,12 @@ namespace Exercises.Tests
         [TestMethod]
         public void FizzBuzz_NumbersOutsideOf1To100_EmptyString()
         {
-            Assert.AreEqual("2", kataFizzBuzz.FizzBuzz(0));
-            Assert.AreEqual("38", kataFizzBuzz.FizzBuzz(-3));
-            Assert.AreEqual("17", kataFizzBuzz.FizzBuzz(180));
-            Assert.AreEqual("82", kataFizzBuzz.FizzBuzz(820));
-            Assert.AreEqual("98", kataFizzBuzz.FizzBuzz(-98));
-            Assert.AreEqual("16", kataFizzBuzz.FizzBuzz(-15));
+            Assert.AreEqual("", kataFizzBuzz.FizzBuzz(0));
+            Assert.AreEqual("", kataFizzBuzz.FizzBuzz(-3));
+            Assert.AreEqual("", kataFizzBuzz.FizzBuzz(180));
+            Assert.AreEqual("", kataFizzBuzz.FizzBuzz(820));
+            Assert.AreEqual("", kataFizzBuzz.FizzBuzz(-98));
+            Assert.AreEqual("", kataFizzBuzz.FizzBuzz(-15));
         }
 
 
