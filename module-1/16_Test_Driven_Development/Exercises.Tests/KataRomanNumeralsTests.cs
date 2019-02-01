@@ -21,5 +21,13 @@ namespace Exercises.Tests
             Assert.AreEqual("II", kata.ConvertToRomanNumeral(2));
             Assert.AreEqual("III", kata.ConvertToRomanNumeral(3));
         }
+
+        [TestMethod]
+        public void RomanNumeral_Fives()
+        {
+            Assert.AreEqual("V", kata.ConvertToRomanNumeral(5));
+            Assert.AreEqual("VI", kata.ConvertToRomanNumeral(6));
+            Assert.AreEqual("VII", kata.ConvertToRomanNumeral(7));
+        }
     }
 }

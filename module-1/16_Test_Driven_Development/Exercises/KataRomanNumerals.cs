@@ -11,6 +11,11 @@ namespace Exercises
         public string ConvertToRomanNumeral(int n)
         {
             string result = "";
+            while (n >= 5)
+            {
+                n -= 5;
+                result += "V";
+            }
             while (n >= 1)
             {
                 n -= 1;
