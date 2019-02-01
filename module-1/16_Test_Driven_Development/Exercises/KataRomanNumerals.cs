@@ -20,6 +20,15 @@ namespace Exercises
             result += ConvertArabicToRoman(5, "V", ref n);
             result += ConvertArabicToRoman(1, "I", ref n);
 
+            // Fix the long form to short form
+            // CCCC -> CD
+            // LXXXX -> XC
+            result = FixLongFormToShortForm(result, "CCCC", "CD");
+            result = FixLongFormToShortForm(result, "LXXXX", "XC");
+            result = FixLongFormToShortForm(result, "XXXX", "XL");
+            result = FixLongFormToShortForm(result, "VIIII", "IX");
+            result = FixLongFormToShortForm(result, "IIII", "IV");
+
             return result;
         }
 
