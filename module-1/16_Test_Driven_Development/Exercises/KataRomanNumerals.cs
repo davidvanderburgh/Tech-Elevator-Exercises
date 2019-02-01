@@ -10,7 +10,14 @@ namespace Exercises
     {
         public string ConvertToRomanNumeral(int n)
         {
-            return "";
+            string result = "";
+            while (n >= 1)
+            {
+                n -= 1;
+                result += "I";
+            }
+
+            return result;
         }
     }
 }
