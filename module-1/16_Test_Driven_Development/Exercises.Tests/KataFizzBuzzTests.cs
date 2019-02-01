@@ -44,7 +44,7 @@ namespace Exercises.Tests
             Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(10));
             Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(20));
             Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(25));
-            Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(35));
+            Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(55));
             Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(40));
         }
 
@@ -63,7 +63,6 @@ namespace Exercises.Tests
         public void FizzBuzz_Inside0To100NotDivisibleBy3Or5_NumberAsString()
         {
             Assert.AreEqual("2", kataFizzBuzz.FizzBuzz(2));
-            Assert.AreEqual("38", kataFizzBuzz.FizzBuzz(38));
             Assert.AreEqual("17", kataFizzBuzz.FizzBuzz(17));
             Assert.AreEqual("82", kataFizzBuzz.FizzBuzz(82));
             Assert.AreEqual("98", kataFizzBuzz.FizzBuzz(98));
@@ -88,7 +87,7 @@ namespace Exercises.Tests
             Assert.AreEqual("Fizz", kataFizzBuzz.FizzBuzz(13));
             Assert.AreEqual("Fizz", kataFizzBuzz.FizzBuzz(23));
             Assert.AreEqual("Fizz", kataFizzBuzz.FizzBuzz(43));
-            Assert.AreEqual("Fizz", kataFizzBuzz.FizzBuzz(53));
+            Assert.AreEqual("Fizz", kataFizzBuzz.FizzBuzz(83));
             Assert.AreEqual("Fizz", kataFizzBuzz.FizzBuzz(73));
         }
 
@@ -98,9 +97,9 @@ namespace Exercises.Tests
             Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(5));
             Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(25));
             Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(50));
-            Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(51));
-            Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(52));
-            Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(54));
+            Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(85));
+            Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(56));
+            Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(95));
         }
     }
 }

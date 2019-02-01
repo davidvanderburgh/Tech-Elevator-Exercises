@@ -20,7 +20,7 @@ namespace Exercises
                 {
                     return "Fizz";
                 }
-                else if (number % 5 == 0)
+                else if (number % 5 == 0 || number.ToString().Contains("5"))
                 {
                     return "Buzz";
                 }
