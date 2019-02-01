@@ -76,6 +76,12 @@ namespace Exercises.Tests
         public void ConvertToDigit_III_3()
         {
             Assert.AreEqual(3, kata.ConvertToDigit("III"));
+        }
+
+        [TestMethod]
+        public void ConvertToDigit_MCMXCVII_1998()
+        {
+            Assert.AreEqual(1998, kata.ConvertToDigit("MCMXCVII"));
+        }
     }
-}
 }
