@@ -8,5 +8,11 @@ namespace Exercises
 {
     public class KataPrimeFactors
     {
+
+        public List<int> Factorize(int n)
+        {
+            return new List<int>();
+        }
+
     }
 }
