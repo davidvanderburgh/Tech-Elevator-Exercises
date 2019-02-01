@@ -46,5 +46,13 @@ namespace Exercises.Tests
             Assert.AreEqual("LX", kata.ConvertToRomanNumeral(60));
             Assert.AreEqual("LXXVIII", kata.ConvertToRomanNumeral(78));
         }
+
+        [TestMethod]
+        public void RomanNumeral_OtherPlaceholders()
+        {
+            Assert.AreEqual("C", kata.ConvertToRomanNumeral(100));
+            Assert.AreEqual("D", kata.ConvertToRomanNumeral(500));
+            Assert.AreEqual("M", kata.ConvertToRomanNumeral(1000));
+        }
     }
 }
