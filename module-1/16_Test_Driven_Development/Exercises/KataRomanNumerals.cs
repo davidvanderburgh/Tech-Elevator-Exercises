@@ -11,15 +11,30 @@ namespace Exercises
         public string ConvertToRomanNumeral(int n)
         {
             string result = "";
-            while (n >= 5)
+
+            result += ConvertArabicToRoman(1000, "M", ref n);
+            result += ConvertArabicToRoman(500, "D", ref n);
+            result += ConvertArabicToRoman(100, "C", ref n);
+            result += ConvertArabicToRoman(50, "L", ref n);
+            result += ConvertArabicToRoman(10, "X", ref n);
+            result += ConvertArabicToRoman(5, "V", ref n);
+            result += ConvertArabicToRoman(1, "I", ref n);
+
+            return result;
+        }
+
+        private string FixLongFormToShortForm(string result, string find, string replace)
+        {
+            return result.Replace(find, replace);
+        }
+
+        private string ConvertArabicToRoman(int places, string romanNumeral, ref int number)
+        {
+            string result = "";
+            while (number >= places)
             {
-                n -= 5;
-                result += "V";
-            }
-            while (n >= 1)
-            {
-                n -= 1;
-                result += "I";
+                number -= places;
+                result += romanNumeral;
             }
 
             return result;
