@@ -29,5 +29,14 @@ namespace Exercises.Tests
             Assert.AreEqual("VI", kata.ConvertToRomanNumeral(6));
             Assert.AreEqual("VII", kata.ConvertToRomanNumeral(7));
         }
+
+        [TestMethod]
+        public void RomanNumeral_Tens()
+        {
+            Assert.AreEqual("X", kata.ConvertToRomanNumeral(10));
+            Assert.AreEqual("XI", kata.ConvertToRomanNumeral(11));
+            Assert.AreEqual("XV", kata.ConvertToRomanNumeral(15));
+            Assert.AreEqual("XXVI", kata.ConvertToRomanNumeral(26));
+        }
     }
 }
