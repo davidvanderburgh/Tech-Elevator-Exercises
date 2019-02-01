@@ -16,7 +16,7 @@ namespace Exercises
                 {
                     return "FizzBuzz";
                 }
-                else if (number % 3 == 0)
+                else if (number % 3 == 0 || number.ToString().Contains("3"))
                 {
                     return "Fizz";
                 }
