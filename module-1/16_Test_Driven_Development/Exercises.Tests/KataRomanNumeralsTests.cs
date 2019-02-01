@@ -38,5 +38,13 @@ namespace Exercises.Tests
             Assert.AreEqual("XV", kata.ConvertToRomanNumeral(15));
             Assert.AreEqual("XXVI", kata.ConvertToRomanNumeral(26));
         }
+
+        [TestMethod]
+        public void RomanNumeral_Fifties()
+        {
+            Assert.AreEqual("L", kata.ConvertToRomanNumeral(50));
+            Assert.AreEqual("LX", kata.ConvertToRomanNumeral(60));
+            Assert.AreEqual("LXXVIII", kata.ConvertToRomanNumeral(78));
+        }
     }
 }
