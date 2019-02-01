@@ -54,5 +54,17 @@ namespace Exercises.Tests
             Assert.AreEqual("D", kata.ConvertToRomanNumeral(500));
             Assert.AreEqual("M", kata.ConvertToRomanNumeral(1000));
         }
+
+        [TestMethod]
+        public void RomanNumeral_Subtractive()
+        {
+            Assert.AreEqual("MIV", kata.ConvertToRomanNumeral(1004));
+            Assert.AreEqual("DIV", kata.ConvertToRomanNumeral(504));
+            Assert.AreEqual("CDLXII", kata.ConvertToRomanNumeral(462));
+            Assert.AreEqual("CDXCIX", kata.ConvertToRomanNumeral(499));
+            Assert.AreEqual("XLI", kata.ConvertToRomanNumeral(41));
+            Assert.AreEqual("XCV", kata.ConvertToRomanNumeral(95));
+        }
+
     }
 }
