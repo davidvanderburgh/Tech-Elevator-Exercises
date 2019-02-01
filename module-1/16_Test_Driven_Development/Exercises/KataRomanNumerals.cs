@@ -32,6 +32,12 @@ namespace Exercises
             return result;
         }
 
+        public int ConvertToDigit(string romanNumeral)
+        {
+            return 0;
+        }
+
+
         private string FixLongFormToShortForm(string result, string find, string replace)
         {
             return result.Replace(find, replace);

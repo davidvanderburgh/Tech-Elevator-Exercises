@@ -15,7 +15,7 @@ namespace Exercises.Tests
         }
 
         [TestMethod]
-        public void RomanNumeral_Ones()
+        public void ConvertToRomanNumeral_Ones()
         {
             Assert.AreEqual("I", kata.ConvertToRomanNumeral(1));
             Assert.AreEqual("II", kata.ConvertToRomanNumeral(2));
@@ -23,7 +23,7 @@ namespace Exercises.Tests
         }
 
         [TestMethod]
-        public void RomanNumeral_Fives()
+        public void ConvertToRomanNumeral_Fives()
         {
             Assert.AreEqual("V", kata.ConvertToRomanNumeral(5));
             Assert.AreEqual("VI", kata.ConvertToRomanNumeral(6));
@@ -31,7 +31,7 @@ namespace Exercises.Tests
         }
 
         [TestMethod]
-        public void RomanNumeral_Tens()
+        public void ConvertToRomanNumeral_Tens()
         {
             Assert.AreEqual("X", kata.ConvertToRomanNumeral(10));
             Assert.AreEqual("XI", kata.ConvertToRomanNumeral(11));
@@ -40,7 +40,7 @@ namespace Exercises.Tests
         }
 
         [TestMethod]
-        public void RomanNumeral_Fifties()
+        public void ConvertToRomanNumeral_Fifties()
         {
             Assert.AreEqual("L", kata.ConvertToRomanNumeral(50));
             Assert.AreEqual("LX", kata.ConvertToRomanNumeral(60));
@@ -48,7 +48,7 @@ namespace Exercises.Tests
         }
 
         [TestMethod]
-        public void RomanNumeral_OtherPlaceholders()
+        public void ConvertToRomanNumeral_OtherPlaceholders()
         {
             Assert.AreEqual("C", kata.ConvertToRomanNumeral(100));
             Assert.AreEqual("D", kata.ConvertToRomanNumeral(500));
@@ -56,7 +56,7 @@ namespace Exercises.Tests
         }
 
         [TestMethod]
-        public void RomanNumeral_Subtractive()
+        public void ConvertToRomanNumeral_Subtractive()
         {
             Assert.AreEqual("MIV", kata.ConvertToRomanNumeral(1004));
             Assert.AreEqual("DIV", kata.ConvertToRomanNumeral(504));
@@ -66,5 +66,10 @@ namespace Exercises.Tests
             Assert.AreEqual("XCV", kata.ConvertToRomanNumeral(95));
         }
 
+        [TestMethod]
+        public void ConvertToDigit_XXIV_24()
+        {
+            Assert.AreEqual(24, kata.ConvertToDigit("XXIV"));
+        }
     }
 }
