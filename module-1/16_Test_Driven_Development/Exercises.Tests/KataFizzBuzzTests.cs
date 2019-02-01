@@ -92,5 +92,15 @@ namespace Exercises.Tests
             Assert.AreEqual("Fizz", kataFizzBuzz.FizzBuzz(73));
         }
 
+        [TestMethod]
+        public void FizzBuzz_NumberContainsA5Only_Buzz()
+        {
+            Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(5));
+            Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(25));
+            Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(50));
+            Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(51));
+            Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(52));
+            Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(54));
+        }
     }
 }
