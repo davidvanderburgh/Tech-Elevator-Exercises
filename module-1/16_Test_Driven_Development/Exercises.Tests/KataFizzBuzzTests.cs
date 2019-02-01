@@ -58,5 +58,16 @@ namespace Exercises.Tests
             Assert.AreEqual("FizzBuzz", kataFizzBuzz.FizzBuzz(75));
             Assert.AreEqual("FizzBuzz", kataFizzBuzz.FizzBuzz(90));
         }
+
+        [TestMethod]
+        public void FizzBuzz_Inside0To100NotDivisibleBy3Or5_NumberAsString()
+        {
+            Assert.AreEqual("2", kataFizzBuzz.FizzBuzz(2));
+            Assert.AreEqual("38", kataFizzBuzz.FizzBuzz(38));
+            Assert.AreEqual("17", kataFizzBuzz.FizzBuzz(17));
+            Assert.AreEqual("82", kataFizzBuzz.FizzBuzz(82));
+            Assert.AreEqual("98", kataFizzBuzz.FizzBuzz(98));
+            Assert.AreEqual("16", kataFizzBuzz.FizzBuzz(16));
+        }
     }
 }
