@@ -10,7 +10,14 @@ namespace Exercises
     {
         public string FizzBuzz(int number)
         {
-            return "";
+            if (number % 3 == 0)
+            {
+                return "Fizz";
+            }
+            else
+            {
+                return "";
+            }
         }
 
     }

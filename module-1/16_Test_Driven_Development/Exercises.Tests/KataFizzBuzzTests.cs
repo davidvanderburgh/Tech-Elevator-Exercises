@@ -17,24 +17,24 @@ namespace Exercises.Tests
         //22 gives "22"
         //0 gives ""
 
-        KataFizzBuzz fizzBuzz;
+        KataFizzBuzz kataFizzBuzz;
 
         [TestInitialize]
         public void Initialize()
         {
-            fizzBuzz = new KataFizzBuzz();
+            kataFizzBuzz = new KataFizzBuzz();
         }
 
 
         [TestMethod]
         public void FizzBuzz_DivisibleBy3Only_Fizz()
         {
-            Assert.AreEqual("Fizz", fizzBuzz.FizzBuzz(3));
-            Assert.AreEqual("Fizz", fizzBuzz.FizzBuzz(6));
-            Assert.AreEqual("Fizz", fizzBuzz.FizzBuzz(9));
-            Assert.AreEqual("Fizz", fizzBuzz.FizzBuzz(12));
-            Assert.AreEqual("Fizz", fizzBuzz.FizzBuzz(18));
-            Assert.AreEqual("Fizz", fizzBuzz.FizzBuzz(21));
+            Assert.AreEqual("Fizz", kataFizzBuzz.FizzBuzz(3));
+            Assert.AreEqual("Fizz", kataFizzBuzz.FizzBuzz(6));
+            Assert.AreEqual("Fizz", kataFizzBuzz.FizzBuzz(9));
+            Assert.AreEqual("Fizz", kataFizzBuzz.FizzBuzz(12));
+            Assert.AreEqual("Fizz", kataFizzBuzz.FizzBuzz(18));
+            Assert.AreEqual("Fizz", kataFizzBuzz.FizzBuzz(21));
         }
     }
 }
