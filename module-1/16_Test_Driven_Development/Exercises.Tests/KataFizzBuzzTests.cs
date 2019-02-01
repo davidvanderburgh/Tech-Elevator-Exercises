@@ -47,5 +47,16 @@ namespace Exercises.Tests
             Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(35));
             Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(40));
         }
+
+        [TestMethod]
+        public void FizzBuzz_DivisibleBy3And5_FizzBuzz()
+        {
+            Assert.AreEqual("FizzBuzz", kataFizzBuzz.FizzBuzz(15));
+            Assert.AreEqual("FizzBuzz", kataFizzBuzz.FizzBuzz(30));
+            Assert.AreEqual("FizzBuzz", kataFizzBuzz.FizzBuzz(45));
+            Assert.AreEqual("FizzBuzz", kataFizzBuzz.FizzBuzz(60));
+            Assert.AreEqual("FizzBuzz", kataFizzBuzz.FizzBuzz(75));
+            Assert.AreEqual("FizzBuzz", kataFizzBuzz.FizzBuzz(90));
+        }
     }
 }
