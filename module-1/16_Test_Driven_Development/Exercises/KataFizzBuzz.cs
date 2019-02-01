@@ -12,7 +12,7 @@ namespace Exercises
         {
             if (number >= 1 && number <= 100)
             {
-                if (number % 3 == 0 && number % 5 == 0)
+                if ((number % 3 == 0 && number % 5 == 0) || (number.ToString().Contains("3") && number.ToString().Contains("5")))
                 {
                     return "FizzBuzz";
                 }
