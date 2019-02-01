@@ -75,7 +75,7 @@ namespace Exercises.Tests
             Assert.AreEqual("", kataFizzBuzz.FizzBuzz(0));
             Assert.AreEqual("", kataFizzBuzz.FizzBuzz(-3));
             Assert.AreEqual("", kataFizzBuzz.FizzBuzz(180));
-            Assert.AreEqual("", kataFizzBuzz.FizzBuzz(820));
+            Assert.AreEqual("", kataFizzBuzz.FizzBuzz(353));
             Assert.AreEqual("", kataFizzBuzz.FizzBuzz(-98));
             Assert.AreEqual("", kataFizzBuzz.FizzBuzz(-15));
         }
@@ -100,6 +100,13 @@ namespace Exercises.Tests
             Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(85));
             Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(56));
             Assert.AreEqual("Buzz", kataFizzBuzz.FizzBuzz(95));
+        }
+
+        [TestMethod]
+        public void FizzBuzz_NumberContains3And5_FizzBuzz()
+        {
+            Assert.AreEqual("FizzBuzz", kataFizzBuzz.FizzBuzz(35));
+            Assert.AreEqual("FizzBuzz", kataFizzBuzz.FizzBuzz(53));
         }
     }
 }
