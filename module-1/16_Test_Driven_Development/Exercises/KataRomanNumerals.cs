@@ -34,9 +34,58 @@ namespace Exercises
 
         public int ConvertToDigit(string romanNumeral)
         {
-            return 0;
+            int result = 0;
+
+            for (int i = 0; i < romanNumeral.Length; i++)
+            {
+                int currentNumeral = GetRomanNumeralCharacterValue(romanNumeral[i]);
+
+                if (i + 1 < romanNumeral.Length)
+                {
+                    int nextNumeral = GetRomanNumeralCharacterValue(romanNumeral[i + 1]);
+
+                    if (currentNumeral >= nextNumeral)
+                    {
+                        result += currentNumeral;
+                    }
+                    else
+                    {
+                        result += nextNumeral - currentNumeral;
+                        i++;
+                    }
+                }
+                else
+                {
+                    result = result + currentNumeral;
+                    i++;
+                }
+            }
+
+            return result;
         }
 
+        private int GetRomanNumeralCharacterValue(char numeral)
+        {
+            switch (numeral)
+            {
+                case 'M':
+                    return 1000;
+                case 'D':
+                    return 500;
+                case 'C':
+                    return 100;
+                case 'L':
+                    return 50;
+                case 'X':
+                    return 10;
+                case 'V':
+                    return 5;
+                case 'I':
+                    return 1;
+                default:
+                    return 0;
+            }
+        }
 
         private string FixLongFormToShortForm(string result, string find, string replace)
         {

@@ -79,9 +79,9 @@ namespace Exercises.Tests
         }
 
         [TestMethod]
-        public void ConvertToDigit_MCMXCVII_1998()
+        public void ConvertToDigit_MCMXCVIII_1998()
         {
-            Assert.AreEqual(1998, kata.ConvertToDigit("MCMXCVII"));
+            Assert.AreEqual(1998, kata.ConvertToDigit("MCMXCVIII"));
         }
     }
 }
