@@ -101,8 +101,22 @@ namespace Exercises.Tests
         }
 
         [TestMethod]
-        public void ConvertToDigit_MCMXCVIII_1998()
+        public void ConvertToDigit_OtherPlaceholders()
         {
+            Assert.AreEqual(100, kata.ConvertToDigit("C"));
+            Assert.AreEqual(500, kata.ConvertToDigit("D"));
+            Assert.AreEqual(1000, kata.ConvertToDigit("M"));
+        }
+
+        [TestMethod]
+        public void ConvertToDigit_Subtractive()
+        {
+            Assert.AreEqual(1004, kata.ConvertToDigit("MIV"));
+            Assert.AreEqual(504, kata.ConvertToDigit("DIV"));
+            Assert.AreEqual(462, kata.ConvertToDigit("CDLXII"));
+            Assert.AreEqual(499, kata.ConvertToDigit("CDXCIX"));
+            Assert.AreEqual(41, kata.ConvertToDigit("XLI"));
+            Assert.AreEqual(95, kata.ConvertToDigit("XCV"));
             Assert.AreEqual(1998, kata.ConvertToDigit("MCMXCVIII"));
         }
     }
