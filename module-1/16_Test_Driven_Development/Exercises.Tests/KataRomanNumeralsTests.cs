@@ -64,6 +64,7 @@ namespace Exercises.Tests
             Assert.AreEqual("CDXCIX", kata.ConvertToRomanNumeral(499));
             Assert.AreEqual("XLI", kata.ConvertToRomanNumeral(41));
             Assert.AreEqual("XCV", kata.ConvertToRomanNumeral(95));
+            Assert.AreEqual("MCMXCVIII", kata.ConvertToRomanNumeral(1998));
         }
 
         [TestMethod]

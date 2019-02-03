@@ -23,6 +23,8 @@ namespace Exercises
             // Fix the long form to short form
             // CCCC -> CD
             // LXXXX -> XC
+
+            result = FixLongFormToShortForm(result, "DCCCC", "CM");
             result = FixLongFormToShortForm(result, "CCCC", "CD");
             result = FixLongFormToShortForm(result, "LXXXX", "XC");
             result = FixLongFormToShortForm(result, "XXXX", "XL");
@@ -34,34 +36,15 @@ namespace Exercises
 
         public int ConvertToDigit(string romanNumeral)
         {
-            int result = 0;
-
-            for (int i = 0; i < romanNumeral.Length; i++)
+            Console.WriteLine(ConvertToRomanNumeral(1998));
+            for (int i = 1; i < 5000; i++)
             {
-                int currentNumeral = GetRomanNumeralCharacterValue(romanNumeral[i]);
-
-                if (i + 1 < romanNumeral.Length)
+                if (ConvertToRomanNumeral(i) == romanNumeral)
                 {
-                    int nextNumeral = GetRomanNumeralCharacterValue(romanNumeral[i + 1]);
-
-                    if (currentNumeral >= nextNumeral)
-                    {
-                        result += currentNumeral;
-                    }
-                    else
-                    {
-                        result += nextNumeral - currentNumeral;
-                        i++;
-                    }
-                }
-                else
-                {
-                    result = result + currentNumeral;
-                    i++;
+                    return i;
                 }
             }
-
-            return result;
+            return 0;
         }
 
         private int GetRomanNumeralCharacterValue(char numeral)
