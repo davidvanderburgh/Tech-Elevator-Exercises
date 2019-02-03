@@ -68,15 +68,36 @@ namespace Exercises.Tests
         }
 
         [TestMethod]
-        public void ConvertToDigit_XXIV_24()
+        public void ConvertToDigit_Ones()
         {
-            Assert.AreEqual(24, kata.ConvertToDigit("XXIV"));
+            Assert.AreEqual(1, kata.ConvertToDigit("I"));
+            Assert.AreEqual(2, kata.ConvertToDigit("II"));
+            Assert.AreEqual(3, kata.ConvertToDigit("III"));
         }
 
         [TestMethod]
-        public void ConvertToDigit_III_3()
+        public void ConvertToDigit_Fives()
         {
-            Assert.AreEqual(3, kata.ConvertToDigit("III"));
+            Assert.AreEqual(5, kata.ConvertToDigit("V"));
+            Assert.AreEqual(6, kata.ConvertToDigit("VI"));
+            Assert.AreEqual(7, kata.ConvertToDigit("VII"));
+        }
+
+        [TestMethod]
+        public void ConvertToDigit_Tens()
+        {
+            Assert.AreEqual(10, kata.ConvertToDigit("X"));
+            Assert.AreEqual(11, kata.ConvertToDigit("XI"));
+            Assert.AreEqual(15, kata.ConvertToDigit("XV"));
+            Assert.AreEqual(26, kata.ConvertToDigit("XXVI"));
+        }
+
+        [TestMethod]
+        public void ConvertToDigit_Fifties()
+        {
+            Assert.AreEqual(50, kata.ConvertToDigit("L"));
+            Assert.AreEqual(60, kata.ConvertToDigit("LX"));
+            Assert.AreEqual(78, kata.ConvertToDigit("LXXVIII"));
         }
 
         [TestMethod]
