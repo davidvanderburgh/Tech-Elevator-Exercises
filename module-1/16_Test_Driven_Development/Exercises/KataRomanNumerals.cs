@@ -36,7 +36,6 @@ namespace Exercises
 
         public int ConvertToDigit(string romanNumeral)
         {
-            Console.WriteLine(ConvertToRomanNumeral(1998));
             for (int i = 1; i < 5000; i++)
             {
                 if (ConvertToRomanNumeral(i) == romanNumeral)
