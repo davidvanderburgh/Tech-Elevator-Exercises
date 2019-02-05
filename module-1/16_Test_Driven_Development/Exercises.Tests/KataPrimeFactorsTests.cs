@@ -31,6 +31,7 @@ namespace Exercises.Tests
             CollectionAssert.AreEqual(new List<int>() { 2, 2, 2 }, kataPrimeFactors.Factorize(8));
             CollectionAssert.AreEqual(new List<int>() { 3, 3 }, kataPrimeFactors.Factorize(9));
             CollectionAssert.AreEqual(new List<int>() { 2, 5}, kataPrimeFactors.Factorize(10));
+            CollectionAssert.AreEqual(new List<int>() { 2, 2, 2, 5, 5 }, kataPrimeFactors.Factorize(200));
         }
 
 
