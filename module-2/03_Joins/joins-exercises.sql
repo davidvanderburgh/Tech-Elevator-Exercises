@@ -148,17 +148,16 @@ ORDER BY total_payments DESC;
 -- (Store 1 has 7928 total rentals and Store 2 has 8121 total rentals)
 SELECT store.store_id, address.address, COUNT(*) AS rentals, SUM(payment.amount) AS total_sales, AVG(payment.amount) AS average_sales
 FROM rental
+JOIN inventory
+ON rental.inventory_id = inventory.inventory_id
 JOIN payment
 ON payment.rental_id = rental.rental_id
-JOIN customer
-ON rental.customer_id = customer.customer_id
 JOIN store
-ON store.store_id = customer.store_id
+ON inventory.store_id = store.store_id
 JOIN address
 ON address.address_id = store.address_id
 GROUP BY store.store_id, address.address
 ORDER BY store.store_id;
-
 
 -- 16. The top ten film titles by number of rentals
 -- (#1 should be “BUCKET BROTHERHOOD” with 34 rentals and #10 should have 31 rentals)
@@ -214,9 +213,8 @@ JOIN inventory
 ON inventory.film_id = film.film_id
 JOIN rental
 ON rental.inventory_id = inventory.inventory_id
-GROUP BY actor.first_name, actor.last_name
+GROUP BY actor.first_name, actor.last_name, actor.actor_id
 ORDER BY rentals DESC;
-
 
 -- 20. The top 5 “Comedy” actors ranked by number of rentals of films in the “Comedy” category starring that actor 
 -- (#1 should have 87 rentals and #5 should have 72 rentals)
@@ -237,5 +235,3 @@ ON rental.inventory_id = inventory.inventory_id
 WHERE category.name = 'Comedy'
 GROUP BY actor.first_name, actor.last_name
 ORDER BY rentals DESC;
-
-
