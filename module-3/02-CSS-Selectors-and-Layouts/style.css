@@ -31,9 +31,8 @@
   a:link {
     text-decoration: none;
     color: #00ADEE;
-    /* border-color: rgba(0, 173, 238, 0.4);
-    border-width: 3; */
-    /* borders not working */
+    padding: 10px;
+    border-bottom: 1px solid var(--light-blue);
   }
   
   a:visited {
@@ -58,9 +57,11 @@
     text-align: center;
     text-transform: uppercase;
     line-height: 3;
-    /* height: 400px; 
-    position: sticky; */
-    /* can't get sticky aside to work */
+    border-right: 1px solid var(--light-green);
+  }
+
+  aside {
+    position: fixed;
   }
 
   .item1 img {
@@ -98,6 +99,7 @@
     grid-row: 3;
     width:100%;
     max-width:333px;
+    border-right: 1px solid var(--light-green);
   }
 
   .item5 {
@@ -106,6 +108,7 @@
     grid-row: 3;
     width:100%;
     max-width:333px;
+    border-right: 1px solid var(--light-green);
   }
 
   .item6 {
