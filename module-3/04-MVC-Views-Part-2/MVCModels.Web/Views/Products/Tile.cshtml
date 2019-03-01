@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewData["Title"] = "Tile";
+}
+
+<style>
+    a{
+        color: black;
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: black;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: black;
+        text-decoration: none;
+    }
+
+    .flexContainer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .flexCell {
+        display: flex;
+        flex-direction: column;
+        height: 300px;
+        width: 300px;
+        align-items: center;
+    }
+
+    .productImage, .productImage img {
+        height: 120px;
+        align-content: center;
+        justify-content: center;
+        margin-bottom: 3px;
+    }
+
+    .productData {
+    }
+
+    .productName {
+        font-size: x-large;
+        line-height:15px;
+    }
+
+    .bestSeller {
+    }
+
+    .productManufacturer {
+    }
+
+    .productPrice {
+    }
+
+    .productWeight {
+    }
+
+    .productRating, .productRating img {
+        width: 100px;
+    }
+</style>
+
+
+<h2>All Products</h2>
+
+<div class="flexContainer">
+    @foreach (Product product in Model)
+    {
+        <div class="flexCell">
+            <div class="productImage">
+                <a href="~/products/detail/@product.ProductId"><img src="/images/@product.ImageName" /></a>
+            </div>
+            <div class="productData">
+                <div class="productName">
+                    <p><a href="~/products/detail/@product.ProductId">@product.Name</a></p>
+                    @if (product.IsTopSeller)
+                    {
+                        <p style="color:red;font-size:smaller"> BEST SELLER!</p>
+                    }
+                </div>
+                <div class="productManufacturer">
+                    <p>by @product.Manufacturer</p>
+                </div>
+                <div class="productLowQuantity">
+                    @if (product.RemainingStock < 5)
+                    {
+                        <p style="color:blue;">Only @product.RemainingStock left!</p>
+                    }
+                </div>
+
+                <div class="productPrice">
+                    <strong style="color:red">$@product.Price</strong>
+                </div>
+                <div class="productWeight">
+                    <strong> Weight </strong>@product.WeightInLbs lbs
+                </div>
+                <div class="productRating">
+                    @{
+                        string productRatingImageFile = "/images/" + Math.Ceiling(product.AverageRating) + "-star.png";
+                    }
+                    <img src=@productRatingImageFile />
+
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

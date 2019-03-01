@@ -1,0 +1,75 @@
+﻿@model Product
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<style>
+    .flexRow {
+        display: flex;
+        flex-direction: row;
+        height: 300px;
+        /*border-bottom: 1px solid lightblue;*/
+        align-items: center;
+    }
+
+    .productImage, .productImage img {
+        width: 400px;
+        align-content: center;
+        justify-content: center;
+        margin-right: 25px;
+    }
+
+    .productName {
+        font-size: x-large;
+    }
+
+    .productRating, .productRating img {
+        width: 100px;
+        margin-bottom: 5px;
+    }
+</style>
+
+<h2>Product Page</h2>
+
+<div class="flexRow">
+    <div class="productImage">
+        <img src="/images/@Model.ImageName" />
+    </div>
+    <div class="productData">
+        <div class="productName">
+            @Model.Name
+            @if (Model.IsTopSeller)
+            {
+                <p style="display:inline;color:red;font-size:smaller"> BEST SELLER!</p>
+            }
+        </div>
+        <div class="productManufacturer">
+            by @Model.Manufacturer
+        </div>
+        <div class="productRating">
+            @{
+                string productRatingImageFile = "/images/" + Math.Ceiling(Model.AverageRating) + "-star.png";
+            }
+            <img src=@productRatingImageFile />
+        </div>
+        <div class="productLowQuantity">
+            @if (Model.RemainingStock < 5)
+            {
+                <p style="display:inline;color:blue;">Only @Model.RemainingStock left!</p>
+            }
+        </div>
+        <div class="productPrice">
+            <strong style="color:red">Price: $@Model.Price</strong>
+        </div>
+        <div class="productWeight">
+            <strong> Weight </strong>@Model.WeightInLbs lbs
+        </div>
+        <div class="productDescription">
+            <p style="display:inline;font-weight:bold">Description: </p> @Model.Description
+
+        </div>
+
+
+    </div>
+</div>
