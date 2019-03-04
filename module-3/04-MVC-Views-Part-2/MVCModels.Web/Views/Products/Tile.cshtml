@@ -4,20 +4,20 @@
 }
 
 <style>
-    a{
+    a {
         color: black;
         text-decoration: none;
     }
 
-    a:visited {
-        color: black;
-        text-decoration: none;
-    }
+        a:visited {
+            color: black;
+            text-decoration: none;
+        }
 
-    a:hover {
-        color: black;
-        text-decoration: none;
-    }
+        a:hover {
+            color: black;
+            text-decoration: none;
+        }
 
     .flexContainer {
         display: flex;
@@ -45,7 +45,7 @@
 
     .productName {
         font-size: x-large;
-        line-height:15px;
+        line-height: 15px;
     }
 
     .bestSeller {
@@ -73,11 +73,17 @@
     {
         <div class="flexCell">
             <div class="productImage">
-                <a href="~/products/detail/@product.ProductId"><img src="/images/@product.ImageName" /></a>
+                <a asp-controller="Products" asp-action="detail" asp-route-id="@product.ProductId">
+                    <img src="/images/@product.ImageName" />
+                </a>
             </div>
             <div class="productData">
                 <div class="productName">
-                    <p><a href="~/products/detail/@product.ProductId">@product.Name</a></p>
+                    <p>
+                        <a asp-controller="Products" asp-action="detail" asp-route-id="@product.ProductId">
+                            @product.Name
+                        </a>
+                    </p>
                     @if (product.IsTopSeller)
                     {
                         <p style="color:red;font-size:smaller"> BEST SELLER!</p>

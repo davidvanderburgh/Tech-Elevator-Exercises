@@ -71,11 +71,15 @@
     {
         <div class="flexRow">
             <div class="productImage">
-                <a href="~/products/detail/@product.ProductId"><img src="/images/@product.ImageName" /></a>
+                <a asp-controller="Products" asp-action="detail" asp-route-id="@product.ProductId">
+                    <img src="/images/@product.ImageName" />
+                </a>
             </div>
             <div class="productData">
                 <div class="productName">
-                    <a href="~/products/detail/@product.ProductId">@product.Name</a>
+                    <a asp-controller="Products" asp-action="detail" asp-route-id="@product.ProductId">
+                        @product.Name
+                    </a>
                     @if (product.IsTopSeller)
                     {
                         <p style="display:inline;color:red;font-size:smaller"> BEST SELLER!</p>
