@@ -1,0 +1,20 @@
+﻿@model IList<Actor>
+
+@{
+    ViewData["Title"] = "SearchResult";
+}
+
+@*<form asp-controller="Actors" asp-action="SearchResult" method="get">
+    <div>
+        <label asp-for="LastName"></label>
+        <input type="text" asp-for="LastName" />
+        <input type="submit" value="Search" />
+    </div>
+</form>*@
+
+<h2>Name</h2>
+@foreach (Actor actor in Model)
+{
+    <p>@actor.FirstName @actor.LastName</p>
+}
+

@@ -10,13 +10,20 @@ namespace GETForms.Web.Controllers
 {
     public class FilmsController : Controller
     {
+        private IFilmDAL dal;
+
+        public FilmsController(IFilmDAL dal)
+        {
+            this.dal = dal;
+        }
+
         /// <summary>
         /// The request to display an empty search page.
         /// </summary>
         /// <returns></returns>
         public ActionResult Index()
         {
-            return null;
+            return View();
         }
 
         /// <summary>
@@ -24,10 +31,24 @@ namespace GETForms.Web.Controllers
         /// </summary>
         /// <param name="request">A request model that contains the search parameters.</param>
         /// <returns></returns>
-        public ActionResult SearchResult(/*FilmSearch request */)
+        public ActionResult SearchResult(FilmSearch model)
         {
             /* Call the DAL and pass the values as a model back to the View */
-            return null;
+
+            if (model.MinLength == null)
+            {
+                model.MinLength = 0;
+            }
+
+            if (model.MaxLength == null)
+            {
+                model.MaxLength = 1000;
+            }
+
+            FilmSearch filmSearch = new FilmSearch();
+            filmSearch.FilmResults = dal.GetFilmsBetween(model.Genre, (int)model.MinLength, (int)model.MaxLength);
+
+            return View(filmSearch);
         }
     }
 }

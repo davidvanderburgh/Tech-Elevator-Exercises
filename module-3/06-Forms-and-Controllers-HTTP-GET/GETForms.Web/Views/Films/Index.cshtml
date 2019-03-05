@@ -1,0 +1,21 @@
+﻿@model FilmSearch
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<form asp-controller="Films" asp-action="SearchResult" method="get">
+    <div>
+        <label asp-for="MinLength"></label>
+        <input type="number" asp-for="MinLength" />
+
+        <label asp-for="MaxLength"></label>
+        <input type="number" asp-for="MaxLength" />
+
+
+        <label asp-for="Genre"></label>
+        <select asp-for="Genre" asp-items="FilmSearch.GenreTypes"></select>
+
+        <input type="submit" value="Search" />
+    </div>
+</form>

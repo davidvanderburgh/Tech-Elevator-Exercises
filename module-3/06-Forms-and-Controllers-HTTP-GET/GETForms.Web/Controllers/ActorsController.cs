@@ -10,6 +10,13 @@ namespace GETForms.Web.Controllers
 {
     public class ActorsController : Controller
     {
+        private IActorDAL dal;
+
+        public ActorsController(IActorDAL dal)
+        {
+            this.dal = dal;
+        }
+
         /// <summary>
         /// The request to display an empty search page.
         /// </summary>
@@ -24,10 +31,11 @@ namespace GETForms.Web.Controllers
         /// </summary>
         /// <param name="request">A request model that contains the search parameters.</param>
         /// <returns></returns>
-        public ActionResult SearchResult(/*ActorSearch request */)
+        public ActionResult SearchResult(Actor model)
         {
             /* Call the DAL and pass the values as a model back to the View */
-            return null;
+            IList<Actor> actors = dal.FindActors(model.LastName);
+            return View(actors);
         }
     }
 }

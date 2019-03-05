@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using GETForms.Web.DAL;
 
 namespace GETForms.Web
 {
@@ -30,6 +31,9 @@ namespace GETForms.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            string connectionString = Configuration.GetConnectionString("Default");
+            services.AddScoped<IActorDAL, ActorDAL>(d => new ActorDAL(connectionString));
+            services.AddScoped<IFilmDAL, FilmDAL>(d => new FilmDAL(connectionString));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
