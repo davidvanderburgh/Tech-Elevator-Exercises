@@ -24,7 +24,42 @@ namespace GETForms.Web.DAL
         /// <returns></returns>
         public IList<Customer> SearchForCustomers(string search, string sortBy)
         {
-            throw new NotImplementedException();
+            IList<Customer> customers = new List<Customer>();
+
+            string customerSearchSql =
+                @"SELECT * FROM customer " +
+                "WHERE first_name LIKE '%' + @search + '%' OR last_name LIKE '%' + @search + '%' " + 
+                "ORDER BY " +
+                " CASE @sortBy WHEN 'last_name' THEN last_name END, " +
+                " CASE @sortBy WHEN 'email' THEN email END, " +
+                " CASE @sortBy WHEN 'activebool' THEN activebool END";
+
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand(customerSearchSql, conn);
+                cmd.Parameters.AddWithValue("@search", search);
+                cmd.Parameters.AddWithValue("@sortBy", sortBy);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    customers.Add(MapRowToCustomer(reader));
+                }
+            }
+            return customers;
+        }
+        private Customer MapRowToCustomer(SqlDataReader reader)
+        {
+            return new Customer()
+            {
+                Email = Convert.ToString(reader["email"]),
+                FirstName = Convert.ToString(reader["first_name"]),
+                LastName = Convert.ToString(reader["last_name"]),
+                IsActive = Convert.ToBoolean(reader["activebool"])
+            };
         }
     }
 }

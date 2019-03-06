@@ -1,0 +1,37 @@
+﻿@model CustomerSearch
+
+@{
+    ViewData["Title"] = "SearchResult";
+}
+
+<form asp-controller="Customers" asp-action="SearchResult" method="get">
+    <div>
+        <label asp-for="SearchString"></label>
+        <input type="text" asp-for="SearchString" />
+
+        <label asp-for="SortString"></label>
+        <select asp-for="SortString" asp-items="CustomerSearch.SortMethods"></select>
+
+        <input type="submit" value="Search" />
+    </div>
+</form>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Active</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Customer customer in Model.SearchResults)
+        {
+            <tr>
+                <td>@customer.FirstName @customer.LastName</td>
+                <td>@customer.Email</td>
+                <td>@customer.IsActive</td>
+            </tr>
+        }
+    </tbody>
+</table>

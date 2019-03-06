@@ -1,0 +1,17 @@
+﻿@model CustomerSearch
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<form asp-controller="Customers" asp-action="SearchResult" method="get">
+    <div>
+        <label asp-for="SearchString"></label>
+        <input type="text" asp-for="SearchString" />
+
+        <label asp-for="SortString"></label>
+        <select asp-for="SortString" asp-items="CustomerSearch.SortMethods"></select>
+
+        <input type="submit" value="Search" />
+    </div>
+</form>

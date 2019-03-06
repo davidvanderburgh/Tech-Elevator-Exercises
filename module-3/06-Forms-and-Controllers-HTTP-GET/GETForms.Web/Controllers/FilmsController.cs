@@ -45,10 +45,9 @@ namespace GETForms.Web.Controllers
                 model.MaxLength = 1000;
             }
 
-            FilmSearch filmSearch = new FilmSearch();
-            filmSearch.FilmResults = dal.GetFilmsBetween(model.Genre, (int)model.MinLength, (int)model.MaxLength);
+            model.FilmResults = dal.GetFilmsBetween(model.Genre, (int)model.MinLength, (int)model.MaxLength);
 
-            return View(filmSearch);
+            return View(model);
         }
     }
 }

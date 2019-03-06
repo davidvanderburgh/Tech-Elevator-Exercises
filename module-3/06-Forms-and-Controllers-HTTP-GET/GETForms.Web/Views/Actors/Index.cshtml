@@ -1,12 +1,12 @@
-﻿@model Actor
+﻿@model ActorSearch
 @{
     ViewData["Title"] = "Index";
 }
 
 <form asp-controller="Actors" asp-action="SearchResult" method="get">
     <div>
-        <label asp-for="LastName"></label>
-        <input type="text" asp-for="LastName" />
+        <label asp-for="LastNameSearchString"></label>
+        <input type="text" asp-for="LastNameSearchString" />
         <input type="submit" value="Search" />
     </div>
 </form>

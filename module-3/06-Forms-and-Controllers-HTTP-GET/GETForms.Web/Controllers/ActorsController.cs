@@ -31,11 +31,11 @@ namespace GETForms.Web.Controllers
         /// </summary>
         /// <param name="request">A request model that contains the search parameters.</param>
         /// <returns></returns>
-        public ActionResult SearchResult(Actor model)
+        public ActionResult SearchResult(ActorSearch model)
         {
             /* Call the DAL and pass the values as a model back to the View */
-            IList<Actor> actors = dal.FindActors(model.LastName);
-            return View(actors);
+            model.Actors = dal.FindActors(model.LastNameSearchString);
+            return View(model);
         }
     }
 }

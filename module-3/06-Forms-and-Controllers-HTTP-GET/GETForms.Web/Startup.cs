@@ -34,6 +34,7 @@ namespace GETForms.Web
             string connectionString = Configuration.GetConnectionString("Default");
             services.AddScoped<IActorDAL, ActorDAL>(d => new ActorDAL(connectionString));
             services.AddScoped<IFilmDAL, FilmDAL>(d => new FilmDAL(connectionString));
+            services.AddScoped<ICustomerDAL, CustomerDAL>(d => new CustomerDAL(connectionString));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
