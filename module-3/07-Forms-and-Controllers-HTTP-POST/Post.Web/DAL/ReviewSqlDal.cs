@@ -22,7 +22,21 @@ namespace Post.Web.DAL
         /// <returns></returns>
         public IList<Review> GetAllReviews()
         {
-            throw new NotImplementedException();
+            IList<Review> reviews = new List<Review>();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM reviews", conn);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    reviews.Add(MapRowToReview(reader));
+                }
+            }
+
+            return reviews;
         }
 
         /// <summary>
@@ -32,7 +46,30 @@ namespace Post.Web.DAL
         /// <returns></returns>
         public int SaveReview(Review newReview)
         {
-            throw new NotImplementedException();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string sql = $"INSERT INTO reviews (username, rating, review_title, review_text) VALUES (@username, @rating, @review_title, @review_text); SELECT CAST(SCOPE_IDENTITY() as int);";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@username", newReview.Username);
+                cmd.Parameters.AddWithValue("@rating", newReview.Rating);
+                cmd.Parameters.AddWithValue("@review_title", newReview.ReviewTitle);
+                cmd.Parameters.AddWithValue("@review_text", newReview.ReviewText);
+
+                return (int)cmd.ExecuteScalar();
+            }
+        }
+
+        private Review MapRowToReview(SqlDataReader reader)
+        {
+            return new Review()
+            {
+                Rating = Convert.ToInt32(reader["rating"]),
+                ReviewText = Convert.ToString(reader["review_text"]),
+                ReviewTitle = Convert.ToString(reader["review_title"]),
+                Username = Convert.ToString(reader["username"])
+            };
         }
     }
 }

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Post.Web.DAL;
 
 namespace Post.Web
 {
@@ -30,6 +31,8 @@ namespace Post.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            string connectionString = Configuration.GetConnectionString("Default");
+            services.AddScoped<IReviewDAL, ReviewSqlDal>(d => new ReviewSqlDal(connectionString));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

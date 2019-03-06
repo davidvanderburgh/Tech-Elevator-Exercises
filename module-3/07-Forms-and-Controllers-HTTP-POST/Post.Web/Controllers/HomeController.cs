@@ -11,12 +11,35 @@ namespace Post.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IReviewDAL dal;
+
+        public HomeController(IReviewDAL dal)
+        {
+            this.dal = dal;
+        }
 
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            return View(dal.GetAllReviews());
         }        
+
+        [HttpGet]
+        public IActionResult NewReview()
+        {
+
+            Review review = new Review();
+            
+            return View(review);
+        }
+
+        [HttpPost]
+        public IActionResult NewReview(Review model)
+        {
+            dal.SaveReview(model);
+            return RedirectToAction("Index", "Home");
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
