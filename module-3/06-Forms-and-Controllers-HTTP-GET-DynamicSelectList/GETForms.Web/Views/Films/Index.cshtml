@@ -1,0 +1,11 @@
+﻿@model FilmSearchViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+ 
+<form method="post">
+    <select asp-for="SelectedGenre" asp-items="@Model.Genres"></select>
+    <button type="submit">Do it...</button>
+</form>
