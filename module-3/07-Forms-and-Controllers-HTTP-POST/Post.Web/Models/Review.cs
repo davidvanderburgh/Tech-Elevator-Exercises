@@ -15,26 +15,9 @@ namespace Post.Web.Models
         public string Username { get; set; }
 
         [Required(ErrorMessage = "*")]
+        [Range(1,5, ErrorMessage = "Stars must be between 1 and 5")]
         [Display(Name = "Rating")]
-        public int Rating
-        {
-            get
-            {
-                return _rating;
-            }
-            set
-            {
-                if (value > 5)
-                {
-                    value = 5;
-                }
-                else if (value < 1)
-                {
-                    value = 1;
-                }
-                _rating = value;
-            }
-        }
+        public int Rating { get; set; }
 
         [Required(ErrorMessage = "*")]
         [Display(Name = "Review Title")]
