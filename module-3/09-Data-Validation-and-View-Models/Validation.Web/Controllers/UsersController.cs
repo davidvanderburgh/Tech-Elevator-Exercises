@@ -28,7 +28,7 @@ namespace Validation.Web.Controllers
         // Return the empty login view
 
         // POST: User/Login  
-        // Validate the model and redirect to login (if successful) or return the 
+        // Validate the model and redirect to confirmation (if successful) or return the 
         // login view (if validation fails)
 
         // GET: User/Confirmation

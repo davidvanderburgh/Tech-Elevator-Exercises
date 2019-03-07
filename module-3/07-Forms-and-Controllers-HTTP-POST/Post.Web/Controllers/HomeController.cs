@@ -36,6 +36,11 @@ namespace Post.Web.Controllers
         [HttpPost]
         public IActionResult NewReview(Review model)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(nameof(NewReview), model);
+            }
+
             dal.SaveReview(model);
             return RedirectToAction("Index", "Home");
         }

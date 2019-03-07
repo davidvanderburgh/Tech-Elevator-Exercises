@@ -5,7 +5,8 @@
 }
 
 
-@*TODO : formatting*@
+
+<img class="product-review-image" src="~/images/forDummies.png" />
 
 <p>
     <a asp-action="NewReview">Create New Review</a>
@@ -14,16 +15,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Username)
+                User
+            </th>
+            <th class="table-cell-star-image">
+                Rating
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Rating)
+                Review Title
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ReviewTitle)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ReviewText)
+                Review
             </th>
             <th></th>
         </tr>
@@ -35,8 +36,11 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Username)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Rating)
+                <td class="table-cell-star-image">
+                    @for (int i = 0; i < item.Rating; i++)
+                    {
+                        <img class="individual-star-image" src="~/images/star.png" />
+                    }
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.ReviewTitle)

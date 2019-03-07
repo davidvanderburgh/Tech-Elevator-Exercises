@@ -10,9 +10,11 @@ namespace Post.Web.Models
     {
         private int _rating;
 
+        [Required(ErrorMessage ="*")]
         [Display(Name="User Name")]
         public string Username { get; set; }
 
+        [Required(ErrorMessage = "*")]
         [Display(Name = "Rating")]
         public int Rating
         {
@@ -34,9 +36,11 @@ namespace Post.Web.Models
             }
         }
 
+        [Required(ErrorMessage = "*")]
         [Display(Name = "Review Title")]
         public string ReviewTitle { get; set; }
 
+        [Required(ErrorMessage = "*")]
         [Display(Name = "Review Text")]
         public string ReviewText { get; set; }
     }

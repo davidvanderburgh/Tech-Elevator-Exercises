@@ -36,6 +36,15 @@ body {
     }
 }
 
+.product-review-image {
+    width: 200px;
+}
+
 .table td, .table th {
     padding:20px;
+}
+
+
+.table-cell-star-image {
+    width: 200px;
 }
