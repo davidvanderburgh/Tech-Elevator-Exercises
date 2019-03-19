@@ -104,6 +104,7 @@ function frontAgain(entry){
 // 		cigarParty(30, false) → false
 // 		cigarParty(50, false) → true
 // 		cigarParty(70, true) → true
+
 function cigarParty(cigars, weekend){
     if (!weekend){
         return (cigars >= 40 && cigars <= 60);
@@ -111,6 +112,14 @@ function cigarParty(cigars, weekend){
     else{
         return (cigars >= 40);
     }
+}
+
+/**
+ * @returns 
+ */
+function sample{
+    var result = "thing";
+    return result;
 }
 
 
