@@ -37,5 +37,55 @@ function displayGroceries() {
   });
 }
 
-setPageTitle();
-displayGroceries();
+document.addEventListener('DOMContentLoaded', () => {
+  setPageTitle();
+  displayGroceries();
+
+  const checks = document.querySelectorAll('li');
+
+  checks.forEach((check) => {
+    // when you click on a check mark it completed
+    check.addEventListener('click', () => {
+      if (!check.classList.contains('completed')) {
+        check.classList.add('completed');
+        check.querySelector('i').classList.add('completed');
+      }
+    });
+
+    // when you double click a check remove the completed class
+    check.addEventListener('dblclick', () => {
+      if (check.classList.contains('completed')) {
+        check.classList.remove('completed');
+        check.querySelector('i').classList.remove('completed');
+      }
+    });
+  });
+
+  const toggleComplete = document.getElementById('toggleAll');
+
+  toggleComplete.addEventListener('click', () => {
+    if (allItemsIncomplete)
+    {
+      checks.forEach((check) => {
+        if (!check.classList.contains('completed')) {
+          check.classList.add('completed');
+          check.querySelector('i').classList.add('completed');          
+        }
+      });
+      //set button to say "mark all incomplete"
+      toggleComplete.innerText = 'MARK ALL INCOMPLETE';
+      allItemsIncomplete = false;
+    }
+    else{
+      checks.forEach((check) => {
+        if (check.classList.contains('completed')) {
+          check.classList.remove('completed');
+          check.querySelector('i').classList.remove('completed');
+        }
+      });
+      //set button to say "mark all complete"
+      toggleComplete.innerText = 'MARK ALL COMPLETE';
+      allItemsIncomplete = true;
+    }
+  });  
+});
