@@ -114,14 +114,6 @@ function cigarParty(cigars, weekend){
     }
 }
 
-/**
- * @returns 
- */
-function sample{
-    var result = "thing";
-    return result;
-}
-
 
 // 8. **fizzBuzz** Because you know you can't live without it, FizzBuzz.
 
