@@ -2,15 +2,8 @@
     <div class="item-list">
         <h1>My Shopping List</h1>
         <ul>
-            <li class="item-completed">{{items[0]}}</li>
-            <li class="item-completed">{{items[1]}}</li>
-            <li class="item-completed">{{items[2]}}</li>
-            <li>{{items[3]}}</li>
-            <li>{{items[4]}}</li>
-            <li>{{items[5]}}</li>
-            <li>{{items[6]}}</li>
-            <li>{{items[7]}}</li>
-            <li>{{items[8]}}</li>
+            <li v-for="item in completedItems" v-bind:key="item" class="item-completed">{{item}}</li>
+            <li v-for="item in items" v-bind:key="item">{{item}}</li>
         </ul>
     </div>
 </template>
@@ -20,15 +13,17 @@ export default {
   data() {
     return {
         items: [
-          'Oatmeal',
-          'Milk',
-          'Banana',
           'Strawberries',
           'Lunch Meat',
           'Bread',
           'Grapes',
           'Steak',
           'Salad'
+        ],
+        completedItems: [
+          'Oatmeal',
+          'Milk',
+          'Banana'
         ]
     }
   }
