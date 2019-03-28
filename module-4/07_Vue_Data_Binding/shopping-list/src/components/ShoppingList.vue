@@ -5,7 +5,7 @@
         <li 
         v-for="item in groceries"
         v-bind:key="item" 
-        :class="{completed:item.completed}"
+        v-bind:class="{ completed : item.completed }"
         > {{ item.item }} </li>
     </ul>
   </div>
